@@ -6,6 +6,7 @@ This is a simple Spring Boot application written in Kotlin, now updated to use S
 
 - JDK 11 or later
 - Gradle
+- Docker
 
 ## Building the Project
 
@@ -24,6 +25,24 @@ To run the application, use the following command:
 ```
 
 The application will start and be accessible at `http://localhost:8080`.
+
+## Running the Application and Database with Docker
+
+To build and run the application and database using Docker, follow these steps:
+
+1. Build the Docker images:
+
+```
+docker-compose build
+```
+
+2. Start the Docker containers:
+
+```
+docker-compose up
+```
+
+The application will be accessible at `http://localhost:8080` and the database will be accessible at `localhost:5432`.
 
 ## API Endpoints
 

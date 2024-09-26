@@ -1,0 +1,12 @@
+# Database files
+*.sql
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
