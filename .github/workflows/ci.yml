@@ -22,11 +22,16 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Set working directory
-        run: cd application
+      - name: Validate Gradle wrapper
+        uses: gradle/wrapper-validation-action@v1
 
-      - name: Build with Gradle
-        run: ./gradlew build
-
-      - name: Run unit tests
-        run: ./gradlew test
+      - name: Gradle test
+        uses: gradle/gradle-build-action@v2.4.2
+        env:
+          GRADLE_BUILD_ACTION_CACHE_DEBUG_ENABLED: true
+        with:
+          gradle-version: "wrapper"
+          arguments: test
+          cache-disabled: true
+          gradle-home-cache-cleanup: true
+          build-root-directory: ./application
