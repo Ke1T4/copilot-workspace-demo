@@ -1,6 +1,6 @@
-# Spring Boot Application with Kotlin
+# Spring Boot Application with Kotlin and WebFlux
 
-This is a simple Spring Boot application written in Kotlin.
+This is a simple Spring Boot application written in Kotlin, now updated to use Spring WebFlux for reactive programming.
 
 ## Prerequisites
 
@@ -29,7 +29,7 @@ The application will start and be accessible at `http://localhost:8080`.
 
 ### GET /hello
 
-Returns a greeting message.
+Returns a greeting message using WebFlux.
 
 Example request:
 
@@ -42,3 +42,9 @@ Example response:
 ```
 Hello, World!
 ```
+
+## Reactive Programming Concepts
+
+Spring WebFlux is a part of the Spring Framework that supports reactive programming. Reactive programming is a programming paradigm that deals with asynchronous data streams and the propagation of change. It is particularly useful for applications that require high concurrency and scalability.
+
+In this project, we use `Mono` from the Reactor library to represent a single asynchronous value. The `hello()` method in the `HelloController` class returns a `Mono<String>`, which is a reactive type that emits a single value or an error.
