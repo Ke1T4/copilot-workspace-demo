@@ -9,6 +9,8 @@ services:
       - "8080:8080"
     depends_on:
       - database
+    environment:
+      SPRING_DATASOURCE_URL: r2dbc:postgresql://database:5432/mydatabase
 
   database:
     build:
